@@ -18,6 +18,7 @@
 .score {
   box-shadow: 1px 2px 3px rgba(0,0,0,.5);
   display: flex;
+  flex-flow: row wrap;
   flex-direction: row;
   background: #489270;
   /* opacity: 0.5; */
@@ -25,6 +26,10 @@
   height: 20vh;
   flex-grow: 1;
   order: 1;
+}
+
+.score > * {
+  flex: 1 100%;
 }
 
 .winner {
@@ -39,17 +44,35 @@
   color: rgba(0, 0, 0, 1.0);
   display: flex;
   justify-content: center;
+  flex-grow: 2;
+  width: 100%;
 }
 
 .winner-hidden {
   display: none;
 }
 
-
-.p1Score{
+.scores {
   display: flex;
-  box-shadow: 1px 2px 3px rgba(0,0,0, 0.5);
-  height: 1em;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.p1Score {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  padding-left: 2em;
+  font-size: 200%;
+}
+
+.p2Score {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  padding-left: 2em;
+  font-size: 200%;
 }
 
 
@@ -121,6 +144,7 @@ li {
   justify-content: space-around;
   flex-basis: auto;
   align-items: center;
+  transition: all 1.5s ease;
 }
 
 .p1_choices {
@@ -148,7 +172,13 @@ li {
 }
 
 .enlarge {
-  font-size: 300%;
+  transition: font-size 1.5s ease-in;
+  font-size: 150%;
   font-weight: 900;
+}
 
+
+.imgs {
+  height: 7em;
+  width: 7em;
 }
